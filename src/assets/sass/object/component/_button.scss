@@ -22,4 +22,16 @@
     border-radius: 9999px;
     font-weight: 700;
   }
+
+  &[data-animation="simple"] {
+    transition-property: background-color, color, border-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+
+    @include hover() {
+      border-color: currentcolor;
+      background-color: $md-grey-900;
+      color: $base-color;
+    }
+  }
 }
