@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+.p-box {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: pxToRem(40px);
+  border: 1px solid #ccc;
+  text-align: center;
+
+  &__body {
+    margin-top: pxToRem(40px);
+  }
+}

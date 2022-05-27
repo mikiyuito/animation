@@ -13,4 +13,13 @@
   text-decoration: none;
   cursor: pointer;
   appearance: none;
+
+  &.-primary {
+    width: 100%;
+    max-width: 220px;
+    padding: pxToRem(16px);
+    border: 1px solid $primary-border-color;
+    border-radius: 9999px;
+    font-weight: 700;
+  }
 }
