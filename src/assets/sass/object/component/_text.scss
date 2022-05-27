@@ -1,3 +1,46 @@
 @charset 'UTF-8';
 @use "sass:math";
-@use "../../global"as *;
+@use "../../global" as *;
+
+.c-text {
+  &.-primary {
+    text-transform: uppercase;
+  }
+
+  &[data-animation="typing"] {
+    width: 10em;
+    margin: 0 auto;
+    overflow: hidden; //1文字ずつ表示させるため
+    animation-name: typing, typoCursor;
+    animation-duration: 3s, 0.8s;
+    animation-timing-function: steps(19, end), step-end; //animation-durationで指定した時間になるまで、そのコマ数分だけアニメーションを繰り返す。
+    animation-iteration-count: 2, infinite; //繰り返す回数
+    border-right: 1px solid $primary-border-color; //タイピングのカーソル用
+    white-space: nowrap; //初期状態ではwidthが0になり、改行されるため改行できないようにする
+
+    @keyframes typing {
+      //0%
+      from {
+        width: 0;
+      }
+
+      //100%
+      to {
+        width: 10em;
+      }
+    }
+  }
+
+  @keyframes typoCursor {
+    //0%,100%
+    from,
+    to {
+      border-right-color: transparent;
+    }
+
+    //50%
+    50% {
+      border-right-color: $primary-border-color;
+    }
+  }
+}
