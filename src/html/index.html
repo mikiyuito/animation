@@ -18,41 +18,90 @@
 
 <body>
   
-  <header class="l-header p-header">
-    <div class="p-header__inner">
-      <div class="l-container">
-        <div class="l-spacer">
-          <h1 class="p-pageTitle">CSSアニメーション</h1>
-          <nav class="p-header__nav">
-            <ul class="p-globalNav">
-              <li class="p-globalNav__item"><a href="#button">ボタン</a></li>
-              <li class="p-globalNav__item"><a href="#text">テキスト</a></li>
-              <li class="p-globalNav__item"><a href="#loading">ローディング</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
   <div class="l-page">
-    <main class="l-main p-main">
-      <section class="p-section -button" id="button">
-        <div class="p-section__inner">
-          <h2 class="c-heading">ボタン</h2>
+    <header class="l-header p-header" id="header">
+      <div class="p-header__inner">
+        <div class="l-spacer" data-y="min:smallTop">
+          <div class="l-container">
+            <div class="p-header__info">
+              <h1 class="p-pageTitle">CSSアニメーション</h1>
+              <nav class="p-header__nav">
+                <h2 class="u-visuallyHidden">ページ内メニュー</h2>
+                <a class="u-visuallyHidden" href="#main">本文までスキップ</a>
+                <ul class="p-globalNav">
+                  <li class="p-globalNav__item"><a href="#button">ボタン</a></li>
+                  <li class="p-globalNav__item"><a href="#text">テキスト</a></li>
+                  <li class="p-globalNav__item"><a href="#loading">ローディング</a></li>
+                </ul>
+              </nav>
+            </div>
+            <!-- /.p-header__info -->
+          </div>
+          <!-- /.l-container -->
         </div>
-      </section>
-      <section class="p-section -text" id="text">
-        <div class="p-section__inner">
-          <h2 class="c-heading">テキスト</h2>
-        </div>
-      </section>
-      <section class="p-section -loading" id="loading">
-        <div class="p-section__inner">
-          <h2 class="c-heading">ローディング</h2>
-        </div>
-      </section>
+        <!-- /.l-spacer -->
+      </div>
+      <!-- /.p-header__inner -->
+    </header>
+    <!-- /#header -->
+    <main class="l-main p-main" id="main">
+      <div class="l-spacer" data-y="min:xlarge">
+        <section class="p-section -button" id="button">
+          <div class="p-section__inner">
+            <div class="l-spacer">
+              <div class="l-container">
+                <div class="p-section__header">
+                  <h2 class="c-heading -level2">
+                    ボタンアニメーション
+                  </h2>
+                </div>
+                <!-- /.p-section__header -->
+                <div class="p-section__body">
+                  <div class="l-spacer" data-y="min:xlargeTop">
+                    <ul class="l-grid" data-mode="grid" data-repeat="min:1 sm:2 lg:3">
+                      <li class="l-grid__item">
+                        <div class="p-box">
+                          <div class="p-box__header">
+                            <h3 class="p-box__title">シンプルなボタン</h3>
+                          </div>
+                          <!-- /.p-box__header -->
+                          <div class="p-box__body">
+                            <button class="c-button -primary" type="submit">ボタン</button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- /.l-spacer -->
+                </div>
+                <!-- /.p-section__body -->
+              </div>
+              <!-- /.l-container -->
+            </div>
+            <!-- /.l-spacer -->
+          </div>
+          <!-- /.p-section__inner -->
+        </section>
+        <!-- /.p-section.-button -->
+      </div>
+      <!-- /.l-spacer -->
     </main>
+    <!-- /#main -->
+    <footer class="l-footer p-footer" id="footer">
+      <div class="p-footer__inner">
+        <div class="l-spacer" data-y="min:smallBottom">
+          <div class="l-container">
+            <p class="p-footer__copyright" translate="no" lang="en"><small>&copy; 2022 Yuito </small></p>
+          </div>
+          <!-- /.l-container -->
+        </div>
+        <!-- /.l-spacer -->
+      </div>
+      <!-- /.p-footer__inner -->
+    </footer>
+    <!-- /#footer -->
   </div>
+  <!-- /.l-page -->
   
 </body>
 

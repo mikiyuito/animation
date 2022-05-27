@@ -2,10 +2,8 @@
 @use "sass:math";
 @use "../../global" as *;
 
-/*
-  Hero
-*/
-.p-hero {
-  $this: &;
-  position: relative;
+.p-section {
+  &__header {
+    text-align: center;
+  }
 }

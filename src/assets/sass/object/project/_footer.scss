@@ -6,5 +6,7 @@
   Footer
 */
 .p-footer {
-  position: relative;
+  &__copyright {
+    text-align: center;
+  }
 }
