@@ -7,6 +7,7 @@
 | ![May-28-2022 10-43-06](https://user-images.githubusercontent.com/69744608/170804915-d1f8049c-5484-44e7-8d65-2d0de84347df.gif) | 右からスライド | ホバーまたはフォーカスすると、黒い背景が右からスライドしてくる  |
 | ![May-29-2022 08-38-29](https://user-images.githubusercontent.com/69744608/170846100-9db2b18a-aa54-45e0-b791-0f4426430ebc.gif) | 左からスライド | ホバーまたはフォーカスすると、黒い背景が左からスライドしてくる |
 | ![May-29-2022 08-52-28](https://user-images.githubusercontent.com/69744608/170846318-2d4cc912-cbcc-4c0b-837c-99eb324d88b2.gif) | 上からスライド | ホバーまたはフォーカスすると、上から黒い背景がスライドしてくる |
+| ![May-29-2022 08-58-06](https://user-images.githubusercontent.com/69744608/170846472-cdbcfe89-0f63-4848-80ce-e53e22df635e.gif) | 下からスライド | ホバーまたはフォーカスすると、黒い背景が下からスライドしてくる |
 
 ## テキスト
 | 実際の動き | タイトル | 説明 |
