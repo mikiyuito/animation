@@ -18,7 +18,7 @@
   &.-primary {
     width: 100%;
     max-width: 220px;
-    padding: pxToRem(16px);
+    padding: pxToRem(24px) pxToRem(16px);
     border: 1px solid $primary-border-color;
     border-radius: 9999px;
     font-weight: 700;
@@ -39,7 +39,7 @@
     }
   }
 
-  //  Slide Right
+  //  Slide right
   //--------------------------------------------
   &[data-animation="slide:right"] {
     position: relative;
@@ -53,7 +53,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      transform: translateX(-100%);
+      transform: translateX(-102%); //100%だと枠線が見えている時がある
       transition-property: transform;
       transition-duration: 0.3s;
       transition-timing-function: ease-in-out;
@@ -87,7 +87,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      transform: translateX(100%);
+      transform: translateX(102%);
       transition-property: transform;
       transition-duration: 0.3s;
       transition-timing-function: ease-in-out;
@@ -121,7 +121,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      transform: translateY(-100%);
+      transform: translateY(-102%);
       transition-property: transform;
       transition-duration: 0.3s;
       transition-timing-function: ease-in-out;
@@ -155,7 +155,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      transform: translateY(100%);
+      transform: translateY(102%);
       transition-property: transform;
       transition-duration: 0.3s;
       transition-timing-function: ease-in-out;
@@ -172,6 +172,38 @@
     & #{$this}__text {
       mix-blend-mode: difference;
       color: $base-color; //mix-blend-modeを有効にするため
+    }
+  }
+
+  //  Offset
+  //--------------------------------------------
+  &[data-animation="offset"] {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translate(1rem, 0.8rem);
+      transition-property: transform;
+      transition-duration: 0.3s;
+      transition-timing-function: cubic-bezier(0.38, -0.39, 0, 0.79);
+      border-radius: 9999px;
+      background-color: #0000004d;
+      will-change: transform;
+    }
+
+    @include hover() {
+      &:before {
+        transform: translate(0);
+      }
+    }
+
+    & #{$this}__text {
+      color: $main-color;
     }
   }
 }
