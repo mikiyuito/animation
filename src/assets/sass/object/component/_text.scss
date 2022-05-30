@@ -3,6 +3,8 @@
 @use "../../global" as *;
 
 .c-text {
+  $this: &;
+
   &.-primary {
     text-transform: uppercase;
   }
@@ -41,6 +43,43 @@
     //50%
     50% {
       border-right-color: $primary-border-color;
+    }
+  }
+
+  &[data-animation="circle:loop"] {
+    $string-length: 13;
+    position: relative;
+    min-height: 300px;
+    animation-name: circleLoop;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+
+    & span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    @keyframes circleLoop {
+      //0%
+      0% {
+        transform: rotate(360deg);
+      }
+
+      //100%
+      100% {
+        transform: rotate(720deg);
+      }
+    }
+
+    @for $i from 1 through $string-length {
+      & #{$this}__char#{$i} {
+        transform: rotate(math.div(360 * $i, $string-length) + deg);
+      }
     }
   }
 }
