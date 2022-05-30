@@ -15,4 +15,6 @@
 | 実際の動き | タイトル | 説明 |
 | ---------- | -------------- | ------------- |
 |   ![May-27-2022 16-19-40](https://user-images.githubusercontent.com/69744608/170651130-b019934d-0cdd-41b2-8eb2-034913c6c232.gif)| タイピング風 | タイピング風のテキストアニメーション。animation-timing-functionにsteps(19,end)を指定してコマ送りにしている |
+| ![May-31-2022 08-02-49](https://user-images.githubusercontent.com/69744608/171066492-857a70da-79b9-400b-ada3-3f5a5815b8ac.gif) | 円形に沿ってループ | 円形ループアニメーション。文字数を調べるにはJavaScriptが必要 
+
 
