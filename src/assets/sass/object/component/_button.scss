@@ -257,4 +257,24 @@
       color: $base-color; // ※黒と黒の場合、変化をもたらさない
     }
   }
+
+  &[data-animation="ripple"] {
+    will-change: box-shadow;
+
+    @include hover() {
+      animation-name: ripple;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+    }
+
+    @keyframes ripple {
+      0% {
+        box-shadow: 0 0 0 0 $main-color;
+      }
+
+      100% {
+        box-shadow: 0 0 0 2em transparent;
+      }
+    }
+  }
 }
