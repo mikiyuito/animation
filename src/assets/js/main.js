@@ -1,12 +1,12 @@
 // Polyfill
-import "intersection-observer";
-import objectFitImages from "object-fit-images";
-import closetPolyfill from "./lib/closet.polyfill";
-objectFitImages();
-closetPolyfill();
+// import "intersection-observer";
+// import objectFitImages from "object-fit-images";
+// import closetPolyfill from "./lib/closet.polyfill";
+// objectFitImages();
+// closetPolyfill();
 
 // Libraly
-import Loading from "./lib/Loading";
+// import Loading from "./lib/Loading";
 // import $ from "jquery";
 // import Swiper from 'swiper';
 // import SmoothScroll from "smooth-scroll";
@@ -17,6 +17,6 @@ import Loading from "./lib/Loading";
 // import { dropdown } from './lib/dropdown';
 // import { inview } from './lib/inview';
 
-new Loading();
+// new Loading();
 // new SmoothScroll('a[href*="#"]');
 // new Toggle(".js-drawer");
