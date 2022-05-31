@@ -141,39 +141,39 @@ html {
   scroll-behavior: smooth;
   font-style: normal;
 
-  &.is-useJs {
-    //JS使用環境
-    //画面ロードした瞬間、スクロールさせない
-    overflow-y: hidden;
-    //画面ロードした瞬間、パンやズーム操作を無効化
-    //※a要素やbutton要素は機能するし、タッチイベントは発生する
-    touch-action: none;
+  // &.is-useJs {
+  //   //JS使用環境
+  //   //画面ロードした瞬間、スクロールさせない
+  //   overflow-y: hidden;
+  //   //画面ロードした瞬間、パンやズーム操作を無効化
+  //   //※a要素やbutton要素は機能するし、タッチイベントは発生する
+  //   touch-action: none;
 
-    @include mq(lg) {
-      //992px以上の時、スクロール許可
-      overflow-y: visible;
-    }
-  }
+  //   @include mq(lg) {
+  //     //992px以上の時、スクロール許可
+  //     overflow-y: visible;
+  //   }
+  // }
 
-  &.is-loaded {
-    //画面ロードアニメーションが終わったら、垂直方向のスクロール許可
-    overflow-y: visible;
-    //画面ロードアニメーションが終わったら、パンやズーム操作許可
-    touch-action: auto;
-  }
+  // &.is-loaded {
+  //   //画面ロードアニメーションが終わったら、垂直方向のスクロール許可
+  //   overflow-y: visible;
+  //   //画面ロードアニメーションが終わったら、パンやズーム操作許可
+  //   touch-action: auto;
+  // }
 
-  &.is-drawerActive {
-    //ドロワーメニューが開いているときはスクロールさせない
-    overflow-y: hidden;
-    //ドロワーメニューが開いている時は、パンやズーム操作を無効化
-    //※a要素やbutton要素は機能するし、タッチイベントは発生する
-    touch-action: none;
+  // &.is-drawerActive {
+  //   //ドロワーメニューが開いているときはスクロールさせない
+  //   overflow-y: hidden;
+  //   //ドロワーメニューが開いている時は、パンやズーム操作を無効化
+  //   //※a要素やbutton要素は機能するし、タッチイベントは発生する
+  //   touch-action: none;
 
-    @include mq(lg) {
-      //992px以上の時、スクロール許可
-      overflow-y: visible;
-    }
-  }
+  //   @include mq(lg) {
+  //     //992px以上の時、スクロール許可
+  //     overflow-y: visible;
+  //   }
+  // }
 }
 
 body {
@@ -213,48 +213,48 @@ body {
     }
   }
 
-  .is-drawerActive & {
-    //is-drawerActiveのついたbody要素
-    overflow-y: hidden;
-    touch-action: none;
+  // .is-drawerActive & {
+  //   //is-drawerActiveのついたbody要素
+  //   overflow-y: hidden;
+  //   touch-action: none;
 
-    @include mq(lg) {
-      overflow-y: visible;
-    }
-  }
+  //   @include mq(lg) {
+  //     overflow-y: visible;
+  //   }
+  // }
 
-  &::after {
-    //ローディングアニメーション(JS無効環境)
-    content: "";
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: fadeOut 1s $easing 3s 1 both;
-    background-color: #fff;
+  // &::after {
+  //   //ローディングアニメーション(JS無効環境)
+  //   content: "";
+  //   position: fixed;
+  //   z-index: 10;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   animation: fadeOut 1s $easing 3s 1 both;
+  //   background-color: #fff;
 
-    .is-useJs & {
-      //JS有効環境の時アニメーションさせない
-      animation: none;
-    }
+  //   .is-useJs & {
+  //     //JS有効環境の時アニメーションさせない
+  //     animation: none;
+  //   }
 
-    .is-loaded & {
-      //ローディングアニメーションが終わった時の消え方
-      visibility: hidden;
-      transform: translate3d(-5%, 0, 0) scale3d(0, 1, 1);
-      transform-origin: left center;
-      transition-property: transform, visibility;
-      transition-duration: 0.8s, 0.1s;
-      transition-timing-function: $easing-cut;
-      transition-delay: 0.5s, 1.5s;
-      pointer-events: none;
-      will-change: transform;
-    }
-  }
+  //   .is-loaded & {
+  //     //ローディングアニメーションが終わった時の消え方
+  //     visibility: hidden;
+  //     transform: translate3d(-5%, 0, 0) scale3d(0, 1, 1);
+  //     transform-origin: left center;
+  //     transition-property: transform, visibility;
+  //     transition-duration: 0.8s, 0.1s;
+  //     transition-timing-function: $easing-cut;
+  //     transition-delay: 0.5s, 1.5s;
+  //     pointer-events: none;
+  //     will-change: transform;
+  //   }
+  // }
 }
 
 address {
