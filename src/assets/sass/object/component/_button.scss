@@ -24,6 +24,12 @@
     font-weight: 700;
   }
 
+  &.-secondary {
+    width: fit-content;
+    padding: pxToRem(24px) pxToRem(16px);
+    font-weight: 700;
+  }
+
   //  Simple
   //--------------------------------------------
 
@@ -258,6 +264,8 @@
     }
   }
 
+  // Ripple
+  //--------------------------------------------
   &[data-animation="ripple"] {
     will-change: box-shadow;
 
@@ -275,6 +283,61 @@
       100% {
         box-shadow: 0 0 0 2em transparent;
       }
+    }
+  }
+
+  // Scan
+  //--------------------------------------------
+
+  &[data-animation="scan"] {
+    padding: pxToEm(8px) pxToEm(16px);
+
+    // Transition
+    //-----------------------------------------------------
+    // 【解説】
+    // hoverされたとき
+    // ①background-sizeが.3sかけて100%になり、幅：100%、高さ:.1emの赤色直線ができる
+    // ②.3s後にbackground-position-yが.3sかけて0%になる
+    // hoverが離れたとき
+    // ①background-position-yが.3sかけて100%になる
+    // ②.3s後にbackground-sizeが.3sかけて0%になる
+    //--------------------------------------------------
+    transition-property: background-position-y, background-size;
+    transition-duration: 0.3s; //アニメーションが完了するまでの時間
+    transition-timing-function: linear; //アニメーションの変更速度
+    transition-delay: var(--second, 0s), calc(0.3s - var(--second, 0s)); //アニメーションが始まるまでの待ち時間
+
+    // Background
+    //-----------------------------------------------------
+
+    // 【解説】
+    // background-imageの一つ目の値は、hover時のテキスト色用。
+    // 2つ目の値は、hover時に出てくる直線用。
+    // background-sizeで一つ目の値の高さを200%にすると、高さの0%から100%まで背景色が$youtube-colorになり、100%から200%までは#000になる。
+    // background-position-yの一つ目の値はhoverされるまで100%の位置に移動。
+    // 100%の位置に移動することで、テキストの色が黒背景色と同じになる。(background-clip:text;を指定しているため)
+    // hoverされると0%の位置に戻るためテキストの色が$youtube-colorになる。
+    // 参考→https://css-tricks.com/css-hover-effects-background-masks-3d/
+    //--------------------------------------------------
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    background-image: linear-gradient(var(--color) 0% 50%, #000 50% 100%), linear-gradient(var(--color) 0% 100%);
+    background-repeat: repeat, no-repeat;
+    background-size: 100% 200%, var(--width, 0%) var(--height);
+    background-position-x: 0%, 0%;
+    background-position-y: calc(100% - var(--position-y, 0%)), var(--position-y, 0%);
+
+    color: transparent;
+    // background-clip:text;はcolorがtransparentかrgba(0,0,0,.5)みたいに透過させないと視覚効果がないため
+    // 参考→https://developer.mozilla.org/ja/docs/Web/CSS/background-clip#:~:text=%E9%83%A8%E5%88%86%E7%9A%84%E3%81%AB-,%E4%B8%8D%E9%80%8F%E6%98%8E%E3%81%AA%E9%A0%98%E5%9F%9F%E3%81%8C%E3%81%82%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E3%81%BF,-%E8%A6%96%E8%A6%9A%E5%8A%B9%E6%9E%9C%E3%81%8C
+    font-size: 1.5rem;
+    --height: 0.1em;
+    --color: #{$youtube-color};
+
+    @include hover() {
+      --width: 100%;
+      --position-y: 100%;
+      --second: 0.3s;
     }
   }
 }
