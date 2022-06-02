@@ -12,7 +12,7 @@
 | ![May-30-2022 14-10-32](https://user-images.githubusercontent.com/69744608/170921085-02f3cfeb-889e-494f-a683-240503b26e71.gif) | 右方向へスライド | ホバーまたはフォーカスすると、右方向へスライドする
 | ![Jun-01-2022 07-32-40](https://user-images.githubusercontent.com/69744608/171294903-774acad6-8cd5-4043-8acb-da1267eecd0f.gif) | 波紋 | ホバーまたはフォーカスすると、波紋が出現する。box-shadowを使って、影の広がりを指定
 | ![Jun-02-2022 11-15-44](https://user-images.githubusercontent.com/69744608/171540548-c1fc1e96-5529-433e-aa57-f31720d3f377.gif) | スキャン | ホバーまたはフォーカスすると、テキストがスキャンされ色が変わる
-
+| ![Jun-03-2022 08-01-12](https://user-images.githubusercontent.com/69744608/171751884-14e241b8-22f9-4501-94d4-72b72b103e16.gif) | 塗り替え | ホバーまたはフォーカスすると、背景色で文字色を塗り替え
 
 ## テキスト
 | 実際の動き | タイトル | 説明 |
