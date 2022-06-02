@@ -9,4 +9,9 @@
   width: 90%;
   max-width: $content-width;
   margin: 0 auto;
+
+  @include mq(xxl) {
+    width: 95%;
+    max-width: calc(($content-width / $pc-comp-width) * 100%);
+  }
 }
