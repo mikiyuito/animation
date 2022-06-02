@@ -26,7 +26,8 @@
 
   &.-secondary {
     width: fit-content;
-    font-size: 1.5rem;
+    padding: pxToRem(8px);
+    font-size: 1.25rem;
     font-weight: 700;
   }
 
@@ -290,8 +291,6 @@
   //--------------------------------------------
 
   &[data-animation="scan"] {
-    padding: pxToEm(8px) pxToEm(16px);
-
     // Transition
     //-----------------------------------------------------
     // 【解説】
@@ -344,8 +343,6 @@
   //--------------------------------------------
 
   &[data-animation="repaint"] {
-    padding: pxToEm(8px);
-
     transition-property: background-position-x, background-size;
     transition-duration: 0.3s;
     transition-timing-function: linear;
