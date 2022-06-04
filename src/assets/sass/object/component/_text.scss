@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 @use "sass:math";
-@use "../../global" as *;
+@use "../../global"as *;
 
 .c-text {
   $this: &;
@@ -8,6 +8,9 @@
   &.-primary {
     text-transform: uppercase;
   }
+
+  //  Typing
+  //--------------------------------------------
 
   &[data-animation="typing"] {
     width: 10em;
@@ -21,6 +24,7 @@
     white-space: nowrap; //初期状態ではwidthが0になり、改行されるため改行できないようにする
 
     @keyframes typing {
+
       //0%
       from {
         width: 0;
@@ -34,6 +38,7 @@
   }
 
   @keyframes typoCursor {
+
     //0%,100%
     from,
     to {
@@ -45,6 +50,9 @@
       border-right-color: $primary-border-color;
     }
   }
+
+  //  Circle Loop
+  //--------------------------------------------
 
   &[data-animation="circle:loop"] {
     $string-length: 13;
@@ -66,6 +74,7 @@
     }
 
     @keyframes circleLoop {
+
       //0%
       0% {
         transform: rotate(360deg);
@@ -80,6 +89,51 @@
     @for $i from 1 through $string-length {
       & #{$this}__char#{$i} {
         transform: rotate(math.div(360 * $i, $string-length) + deg);
+      }
+    }
+  }
+
+  //  Order Flow Down
+  //--------------------------------------------
+
+  &[data-animation="orderFlow:down"] {
+    $string-length: 13;
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    & #{$this}__string {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    & #{$this}__char {
+      transform: translateY(-100%);
+      animation-name: orderFlowDown;
+      animation-duration: 0.2s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards; // アニメーション実行後のスタイルを保持する
+    }
+
+    @for $i from 1 through $string-length {
+      & #{$this}__char.-char#{$i} {
+        animation-delay: 0.1 * $i + s;
+      }
+    }
+
+    @keyframes orderFlowDown {
+
+      //0%
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      //100%
+      100% {
+        transform: translateY(0);
+        opacity: 1;
       }
     }
   }
