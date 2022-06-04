@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 @use "sass:math";
-@use "../../global" as *;
+@use "../../global"as *;
 
 .c-text {
   $this: &;
@@ -24,6 +24,7 @@
     white-space: nowrap; //初期状態ではwidthが0になり、改行されるため改行できないようにする
 
     @keyframes typing {
+
       //0%
       from {
         width: 0;
@@ -37,6 +38,7 @@
   }
 
   @keyframes typoCursor {
+
     //0%,100%
     from,
     to {
@@ -72,6 +74,7 @@
     }
 
     @keyframes circleLoop {
+
       //0%
       0% {
         transform: rotate(360deg);
@@ -110,7 +113,7 @@
       animation-duration: 0.2s;
       animation-timing-function: ease-out;
       animation-iteration-count: 1;
-      animation-fill-mode: forwards;
+      animation-fill-mode: forwards; // アニメーション実行後のスタイルを保持する
     }
 
     @for $i from 1 through $string-length {
@@ -120,6 +123,7 @@
     }
 
     @keyframes orderFlowDown {
+
       //0%
       0% {
         transform: translateY(-100%);
