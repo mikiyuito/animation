@@ -417,4 +417,49 @@
       }
     }
   }
+
+  // Shape Cross
+  //--------------------------------------------
+
+  &[data-animation="shape:cross"] {
+    width: 100%;
+    max-width: 200px;
+    padding: pxToRem(24px) pxToRem(16px);
+    transition-property: clip-path;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+    background-color: $youtube-color;
+    color: $base-color;
+    clip-path: polygon(
+      0% 50%,
+      0% 0%,
+      30% 0%,
+      50% 0%,
+      70% 0%,
+      100% 0%,
+      100% 50%,
+      100% 100%,
+      70% 100%,
+      50% 100%,
+      30% 100%,
+      0% 100%
+    );
+
+    @include hover() {
+      clip-path: polygon(
+        30% 50%,
+        0% 0%,
+        30% 0%,
+        50% 30%,
+        70% 0%,
+        100% 0%,
+        70% 50%,
+        100% 100%,
+        70% 100%,
+        50% 70%,
+        30% 100%,
+        0% 100%
+      );
+    }
+  }
 }
