@@ -364,4 +364,57 @@
       --position-x: 0%;
     }
   }
+
+  // Shape Hexagonal
+  //--------------------------------------------
+
+  &[data-animation="shape:hexagonal"] {
+    position: relative;
+    width: 150px;
+    transition-property: clip-path;
+    transition-duration: 0.3s;
+
+    border: none;
+    border-radius: 0;
+    background-color: $twitter-color;
+    // clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%, 0% 100%, 0% 100%); 意図しない
+    clip-path: polygon(
+      0% 50%,
+      0% 0%,
+      100% 0%,
+      100% 50%,
+      100% 100%,
+      0% 100%
+    ); // 座標の数を揃える アニメーションの起点となる座標は変化前と変化後のどちらも同じ座標にする(0% 50%と100% 50%)
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+      transition-property: clip-path;
+      transition-duration: 0.3s;
+      background-color: $base-color;
+      // clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%, 0% 100%, 0% 100%);
+      clip-path: polygon(
+        0% 50%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        100% 100%,
+        0% 100%
+      ); // 座標の数を揃える  アニメーションの起点となる座標は変化前と変化後のどちらも同じ座標にする(0% 50%と100% 50%)
+    }
+
+    @include hover() {
+      clip-path: polygon(0% 50%, 20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%); // 座標の数を揃える
+
+      &::before {
+        clip-path: polygon(0% 50%, 20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%); // 座標の数を揃える
+      }
+    }
+  }
 }
