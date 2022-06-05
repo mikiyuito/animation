@@ -13,6 +13,8 @@
 | ![Jun-01-2022 07-32-40](https://user-images.githubusercontent.com/69744608/171294903-774acad6-8cd5-4043-8acb-da1267eecd0f.gif) | 波紋 | ホバーまたはフォーカスすると、波紋が出現する。box-shadowを使って、影の広がりを指定
 | ![Jun-02-2022 11-15-44](https://user-images.githubusercontent.com/69744608/171540548-c1fc1e96-5529-433e-aa57-f31720d3f377.gif) | スキャン | ホバーまたはフォーカスすると、テキストがスキャンされ色が変わる
 | ![Jun-03-2022 08-01-12](https://user-images.githubusercontent.com/69744608/171751884-14e241b8-22f9-4501-94d4-72b72b103e16.gif) | 塗り替え | ホバーまたはフォーカスすると、背景色で文字色を塗り替え
+| ![Jun-05-2022 10-37-42](https://user-images.githubusercontent.com/69744608/172031729-5f60be13-2bbd-458d-b6ef-978fe505403b.gif) | 六角形 | ホバーまたはフォーカスすると、六角形になるボタン
+
 
 ## テキスト
 | 実際の動き | タイトル | 説明 |
