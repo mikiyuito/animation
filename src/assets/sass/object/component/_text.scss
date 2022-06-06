@@ -6,6 +6,8 @@
   $this: &;
 
   &.-primary {
+    font-size: 1.25rem;
+    font-weight: 700;
     text-transform: uppercase;
   }
 
@@ -95,8 +97,6 @@
 
   &[data-animation="orderFlow:down"] {
     $string-length: 13;
-    font-size: 1.25rem;
-    font-weight: 700;
 
     & #{$this}__string {
       display: flex;
@@ -130,6 +130,36 @@
       100% {
         transform: translateY(0);
         opacity: 1;
+      }
+    }
+  }
+
+  //  Slide Right
+  //--------------------------------------------
+
+  &[data-animation="slide:right"] {
+    //参考→https://baigie.me/officialblog/2021/02/25/css-tips-1/
+    overflow: hidden; // 重要
+    transform: translateX(-100%);
+    animation-name: slideRight;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards;
+
+    & #{$this}__string {
+      display: block;
+      transform: translateX(100%);
+      animation-name: slideRight;
+      animation-duration: 1.5s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 3;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes slideRight {
+      100% {
+        transform: translateX(0);
       }
     }
   }
