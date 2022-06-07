@@ -199,4 +199,46 @@
       }
     }
   }
+
+  // Beat
+  //--------------------------------------------
+
+  &[data-animation="beat"] {
+    $string-length: 4;
+
+    & #{$this}__string {
+      display: flex;
+      align-items: center;
+      animation-name: beat;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes beat {
+      // 0% {
+      //   transform: scale(1);
+      // }
+
+      60% {
+        transform: scale(1);
+      }
+
+      70% {
+        transform: scale(1.2);
+      }
+
+      80% {
+        transform: scale(1);
+      }
+
+      90% {
+        transform: scale(1.2);
+      }
+
+      // 100% {
+      //   transform: scale(1);
+      // }
+    }
+  }
 }
