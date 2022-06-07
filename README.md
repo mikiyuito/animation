@@ -24,6 +24,7 @@
 | ![Jun-04-2022 09-29-32](https://user-images.githubusercontent.com/69744608/171969286-21bd1071-c53e-4b0e-a6a8-796adf90c0e3.gif) | 上からテキストが降ってくる | 上からテキストが降ってくるアニメーション。animaion-fill-mode:forwards;でアニメーション実行後のスタイルを保持している
 | ![Jun-07-2022 08-05-12](https://user-images.githubusercontent.com/69744608/172263521-555a622f-b300-47de-acc7-133a62b98f2c.gif) | 右からスライド | 右からテキストがスライドしてくるアニメーション
 | ![Jun-08-2022 07-51-21](https://user-images.githubusercontent.com/69744608/172496139-fb2d97bd-9216-4e72-8647-59c07936e34d.gif) | 文字が弾む | 文字が弾むアニメーションを作成
+| ![Jun-08-2022 08-17-12](https://user-images.githubusercontent.com/69744608/172498689-966ed45c-fecc-404b-92b8-8b3a17cd9144.gif) | 文字が鼓動 | 文字が鼓動するアニメーションを作成
 
 
 
