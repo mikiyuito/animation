@@ -163,4 +163,40 @@
       }
     }
   }
+
+  // Bound
+  //--------------------------------------------
+  &[data-animation="bound"] {
+    $string-length: 6;
+    letter-spacing: 0.1em;
+
+    & #{$this}__string {
+      display: flex;
+      align-items: center;
+    }
+
+    & #{$this}__char {
+      display: inline-block;
+      animation-name: bound;
+      animation-duration: 0.8s;
+      animation-iteration-count: infinite;
+    }
+
+    @for $i from 1 through $string-length {
+      & #{$this}__char.-char#{$i} {
+        animation-delay: 0.1 * $i + s;
+      }
+    }
+
+    @keyframes bound {
+      //0%
+      0% {
+        transform: scale(1.1) translate(15%, -50%);
+      }
+
+      90% {
+        transform: scale(1.2, 0.9) translate(0);
+      }
+    }
+  }
 }
