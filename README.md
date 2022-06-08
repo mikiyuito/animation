@@ -15,6 +15,7 @@
 | ![Jun-03-2022 08-01-12](https://user-images.githubusercontent.com/69744608/171751884-14e241b8-22f9-4501-94d4-72b72b103e16.gif) | 塗り替え | ホバーまたはフォーカスすると、背景色で文字色を塗り替え
 | ![Jun-05-2022 10-37-42](https://user-images.githubusercontent.com/69744608/172031729-5f60be13-2bbd-458d-b6ef-978fe505403b.gif) | 六角形 | ホバーまたはフォーカスすると、六角形になるボタン
 | ![Jun-06-2022 07-22-22](https://user-images.githubusercontent.com/69744608/172073028-234a8fe1-0d68-4451-af58-d31fe9cdaf36.gif) | バツ印 | ホバーまたはフォーカスすると、バツ印になるボタン
+| ![Jun-09-2022 08-17-59](https://user-images.githubusercontent.com/69744608/172733143-ac5690c5-beab-497c-af29-a9b3d794284a.gif) | ゴムのように弾む | ホバーまたはフォーカスすると、ゴムのように弾む
 
 ## テキスト
 | 実際の動き | タイトル | 説明 |
