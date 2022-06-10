@@ -494,4 +494,58 @@
       }
     }
   }
+
+  // Collision
+  //--------------------------------------------
+  &[data-animation="collision"] {
+    position: relative;
+    overflow: hidden;
+
+    background-color: $base-color;
+
+    & #{$this}__text {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      color: $base-color;
+      mix-blend-mode: difference;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1em;
+      height: 1em;
+      margin: auto 0;
+      transform: translateX(-50%);
+      transition-property: left, transform;
+      transition-duration: 0.5s;
+      transition-delay: 0.5s, 0s;
+      border-radius: 9999px;
+      background-color: $main-color;
+    }
+
+    &::before {
+      z-index: 1;
+      left: -5%;
+    }
+
+    &::after {
+      z-index: 0;
+      left: 105%;
+    }
+
+    @include hover() {
+      &:before,
+      &:after {
+        left: 50%;
+        transform: scale(20);
+        transition-duration: 0.5s;
+        transition-delay: 0s, 0.5s;
+      }
+    }
+  }
 }
