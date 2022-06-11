@@ -548,4 +548,84 @@
       }
     }
   }
+
+  // Circle Stretch
+  //--------------------------------------------
+
+  &[data-animation="circle:stretch"] {
+    position: relative;
+    border: none;
+    background-color: $base-color;
+
+    & #{$this}__circle {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 2em;
+      height: 2em;
+      margin: auto 0;
+      transition-property: width;
+      transition-duration: 0.5s;
+      border-radius: 9999px;
+      background-color: $main-color;
+    }
+
+    & #{$this}__arrow {
+      display: block;
+      position: absolute;
+      top: 1px;
+      bottom: 0;
+      width: 2em;
+      height: 2px;
+      margin: auto 0;
+      transition-property: width, transform, background-color;
+      transition-duration: 0.1s;
+      background-color: transparent;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -0.3em;
+        width: 0.8em;
+        height: 0.8em;
+        margin: auto;
+        transform: rotate(45deg);
+        transition-property: transform;
+        transition-duration: 0.5s;
+        border-top: 2px solid $base-color;
+        border-right: 2px solid $base-color;
+      }
+    }
+
+    & #{$this}__text {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      mix-blend-mode: difference;
+      color: $base-color;
+    }
+  }
+
+  @include hover() {
+    & #{$this}__circle {
+      width: 100%;
+    }
+
+    & #{$this}__arrow {
+      transform: translateX(0.5em);
+      transition-duration: 0.5s;
+      transition-delay: 0s, 0s, 0.1s;
+      background-color: $base-color;
+
+      &::before {
+        transform: translateX(0.8em) rotate(45deg);
+      }
+    }
+  }
 }
