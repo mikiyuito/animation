@@ -241,4 +241,75 @@
       // }
     }
   }
+
+  // Reveal Left
+  //--------------------------------------------
+
+  &[data-animation="reveal:left"] {
+    & #{$this}__inner {
+      display: block;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation-name: revealCover;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        background-color: $main-color;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes revealCover {
+        0% {
+          transform: scaleX(0);
+          transform-origin: left;
+        }
+
+        50% {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+
+        50.0001% {
+          transform-origin: right;
+        }
+
+        100% {
+          transform: scaleX(0);
+          transform-origin: right;
+        }
+      }
+    }
+
+    & #{$this}__string {
+      display: inline-block;
+      animation-name: revealText;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-delay: 0.5s;
+      animation-iteration-count: 1;
+      opacity: 0;
+      animation-fill-mode: forwards;
+
+      @keyframes revealText {
+        //0%
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
