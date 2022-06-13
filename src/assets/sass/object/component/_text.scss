@@ -312,4 +312,49 @@
       }
     }
   }
+
+  // Ghost
+  //--------------------------------------------
+
+  &[data-animation="ghost"] {
+    $string-length: 13;
+
+    & #{$this}__string {
+      display: flex;
+      align-items: center;
+      // overflow: hidden;
+    }
+
+    & #{$this}__char {
+      display: inline-block;
+      padding-left: 0.1em;
+      transform: scale(2);
+      animation-name: ghost;
+      animation-duration: 1.5s;
+      opacity: 0;
+      letter-spacing: 0.1em;
+      animation-fill-mode: forwards;
+      filter: blur(0.1em);
+    }
+
+    @for $i from 1 through $string-length {
+      & #{$this}__char.-char#{$i} {
+        animation-delay: 0.1 * $i + s;
+      }
+    }
+
+    @keyframes ghost {
+      0% {
+        transform: scale(2);
+        opacity: 0;
+        filter: blur(0.1em);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+  }
 }
