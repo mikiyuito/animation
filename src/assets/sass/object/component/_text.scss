@@ -357,4 +357,57 @@
       }
     }
   }
+
+  // Slide Loop
+  //--------------------------------------------
+  &[data-animation="slide:loop"] {
+    overflow: hidden;
+    color: rgba($main-color, 0.15);
+    font-size: 1.5rem;
+    will-change: contents;
+
+    & #{$this}__inner {
+      display: flex;
+      align-items: center;
+    }
+
+    & #{$this}__string {
+      display: inline-block;
+      position: relative;
+      animation-name: slideLoop1;
+      animation-duration: 8s;
+      animation-timing-function: linear;
+      animation-delay: -4s;
+      animation-iteration-count: infinite;
+      will-change: transform;
+
+      @keyframes slideLoop1 {
+        0% {
+          transform: translateX(200%);
+        }
+
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    }
+
+    & #{$this}__hidden {
+      animation-name: slideLoop2;
+      animation-duration: 8s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      will-change: transform;
+
+      @keyframes slideLoop2 {
+        0% {
+          transform: translateX(100%);
+        }
+
+        100% {
+          transform: translateX(-200%);
+        }
+      }
+    }
+  }
 }
