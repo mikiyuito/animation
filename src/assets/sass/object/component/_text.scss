@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 @use "sass:math";
-@use "../../global" as *;
+@use "../../global"as *;
 
 .c-text {
   $this: &;
@@ -26,6 +26,7 @@
     white-space: nowrap; //初期状態ではwidthが0になり、改行されるため改行できないようにする
 
     @keyframes typing {
+
       //0%
       from {
         width: 0;
@@ -39,6 +40,7 @@
   }
 
   @keyframes typoCursor {
+
     //0%,100%
     from,
     to {
@@ -74,6 +76,7 @@
     }
 
     @keyframes circleLoop {
+
       //0%
       0% {
         transform: rotate(360deg);
@@ -120,6 +123,7 @@
     }
 
     @keyframes orderFlowDown {
+
       //0%
       0% {
         transform: translateY(-100%);
@@ -189,6 +193,7 @@
     }
 
     @keyframes bound {
+
       //0%
       0% {
         transform: scale(1.1) translate(15%, -50%);
@@ -301,6 +306,7 @@
       animation-fill-mode: forwards;
 
       @keyframes revealText {
+
         //0%
         0% {
           opacity: 0;
@@ -363,7 +369,6 @@
   &[data-animation="slide:loop"] {
     overflow: hidden;
     color: rgba($main-color, 0.15);
-    font-size: 1.5rem;
     will-change: contents;
 
     & #{$this}__inner {
