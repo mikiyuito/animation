@@ -30,6 +30,5 @@
 | ![Jun-08-2022 08-17-12](https://user-images.githubusercontent.com/69744608/172498689-966ed45c-fecc-404b-92b8-8b3a17cd9144.gif) | 文字が鼓動 | 文字が鼓動するアニメーションを作成
 | ![Jun-12-2022 09-40-00](https://user-images.githubusercontent.com/69744608/173209524-6035470f-f601-4c46-bed0-a7f02bef46e6.gif) | 背景が左から伸びて出現 | 背景が左から伸びてテキストが出現するアニメーション
 | ![Jun-13-2022 09-24-13](https://user-images.githubusercontent.com/69744608/173259887-54e5d822-c72a-436c-b75a-fcd4e498d22a.gif) | ぼわぁ〜ん | ぼわぁ〜んって感じで出現するアニメーション
-
-
+| ![Jun-14-2022 10-21-38](https://user-images.githubusercontent.com/69744608/173473534-814876de-4ede-41f6-8e7a-f96b4edf5eb1.gif) | スライドループ | テキストが左からスライドしてループするアニメーション
 
