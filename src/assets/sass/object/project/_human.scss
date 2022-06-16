@@ -1,0 +1,157 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+.p-human {
+  $this: &;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    animation-name: slideLeft;
+    animation-duration: 1s;
+
+    @keyframes slideLeft {
+      0% {
+        transform: translateX(-100%) scale(0.5);
+        transform-origin: center;
+        opacity: 0;
+      }
+
+      50% {
+        transform: translateX(0) scale(0.5);
+        transform-origin: center;
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__head {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 auto;
+    transform: rotate(0) translate(0, -0.3rem);
+    animation-name: swing;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border-radius: 50%;
+    background-color: $base-color;
+
+    @keyframes swing {
+      0% {
+        transform: rotate(30deg) translate(3px, -0.3rem);
+      }
+
+      20% {
+        transform: rotate(-30deg) translate(-3px, -0.3rem);
+      }
+
+      40% {
+        transform: rotate(30deg) translate(3px, -0.3rem);
+      }
+
+      60% {
+        transform: rotate(-30deg) translate(-3px, -0.3rem);
+      }
+
+      80% {
+        transform: rotate(30deg) translate(3px, -0.3rem);
+      }
+
+      100% {
+        transform: rotate(-30deg) translate(-3px, -0.3rem);
+      }
+    }
+  }
+
+  &__body {
+    max-height: 136px;
+  }
+
+  &__shoulder {
+    width: 4.5rem;
+    height: 1.5rem;
+    margin: 0 auto;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: $base-color;
+  }
+
+  &__torso {
+    width: 2.5rem;
+    height: 5rem;
+    margin: 0 auto;
+    transform: translateY(-1rem);
+    background-color: $base-color;
+  }
+
+  &__arms {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__arm {
+    width: 0.7rem;
+    height: 4.5rem;
+    transform: translateY(-5.8rem);
+    border-radius: 9999px;
+    background-color: $base-color;
+
+    &.-left::before,
+    &.-right::before {
+      content: "";
+      display: block;
+      width: pxToRem(4.7px);
+      height: 1rem;
+      border-radius: 9999px;
+      background-color: $md-pink-300;
+    }
+
+    &.-left::before {
+      transform: translate(0.7rem, 0.7rem);
+    }
+
+    &.-right::before {
+      transform: translate(-0.3rem, 0.7rem);
+    }
+  }
+
+  &__legs {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__leg {
+    width: 0.8rem;
+    height: 4rem;
+    transform: translateY(-6.5rem);
+    border-radius: 9999px;
+    background-color: $base-color;
+
+    &.-left {
+      &::before {
+        content: "";
+        display: block;
+        width: 0.9rem;
+        height: 4rem;
+        transform: translate(pxToRem(12.8px), 0.6rem);
+        border-radius: 9999px;
+        background-color: $md-pink-300;
+      }
+    }
+
+    & + & {
+      margin-left: 0.9rem;
+    }
+  }
+}
