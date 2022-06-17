@@ -102,4 +102,74 @@
       }
     }
   }
+
+  // Loading
+  //--------------------------------------------
+
+  &[data-animation="loading"] {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid $main-color;
+    background-color: $base-color;
+
+    &::before {
+      content: "0%";
+      display: flex;
+      position: relative;
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      animation-name: percentage;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      color: $base-color;
+      font-size: 1.25rem;
+      font-weight: 700;
+      animation-fill-mode: forwards;
+      mix-blend-mode: difference;
+
+      @keyframes percentage {
+        @for $i from 0 through 100 {
+          $percentage: $i + "%";
+
+          #{$percentage} {
+            content: $percentage;
+          }
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-origin: left;
+      animation-name: slide;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      background-color: $main-color;
+      animation-fill-mode: forwards;
+
+      @keyframes slide {
+        0% {
+          transform: scaleX(0); //scaleではなく、scaleX！！
+        }
+
+        100% {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
 }
