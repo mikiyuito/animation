@@ -7,6 +7,7 @@
 
   &__inner {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
 
@@ -34,8 +35,8 @@
   }
 
   &__head {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     margin: 0 auto;
     transform: rotate(0) translate(0, -0.3rem);
     animation-name: swing;
@@ -75,83 +76,112 @@
   }
 
   &__body {
-    max-height: 136px;
-  }
-
-  &__shoulder {
-    width: 4.5rem;
-    height: 1.5rem;
-    margin: 0 auto;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    background-color: $base-color;
-  }
-
-  &__torso {
-    width: 2.5rem;
-    height: 5rem;
-    margin: 0 auto;
-    transform: translateY(-1rem);
-    background-color: $base-color;
-  }
-
-  &__arms {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__arm {
-    width: 0.7rem;
-    height: 4.5rem;
-    transform: translateY(-5.8rem);
-    border-radius: 9999px;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-right: 60px;
     background-color: $base-color;
 
-    &.-left::before,
-    &.-right::before {
+    clip-path: polygon(
+      30% 0,
+      100% 0,
+      100% 50%,
+      90% 50%,
+      90% 20%,
+      85% 20%,
+      85% 100%,
+      70% 100%,
+      70% 60%,
+      60% 60%,
+      60% 100%,
+      45% 100%,
+      45% 20%,
+      40% 20%,
+      40% 50%,
+      30% 50%,
+      30% 10%
+    );
+
+    &::before {
       content: "";
-      display: block;
-      width: pxToRem(4.7px);
-      height: 1rem;
-      border-radius: 9999px;
-      background-color: $md-pink-300;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 130%;
+      animation-name: up;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      background-color: #a6e0fc;
+      animation-fill-mode: forwards;
     }
 
-    &.-left::before {
-      transform: translate(0.7rem, 0.7rem);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 60%;
+      width: 200%;
+      height: 200%;
+      transform: translate(-50%, -50%);
+      animation-name: wave, up;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite, 1;
+      border-radius: 45%;
+      background-color: #fff;
+      animation-fill-mode: forwards;
     }
 
-    &.-right::before {
-      transform: translate(-0.3rem, 0.7rem);
-    }
-  }
+    @keyframes wave {
+      0% {
+        transform: translate(-50%, -75%) rotate(0);
+      }
 
-  &__legs {
-    display: flex;
-    justify-content: center;
-  }
-
-  &__leg {
-    width: 0.8rem;
-    height: 4rem;
-    transform: translateY(-6.5rem);
-    border-radius: 9999px;
-    background-color: $base-color;
-
-    &.-left {
-      &::before {
-        content: "";
-        display: block;
-        width: 0.9rem;
-        height: 4rem;
-        transform: translate(pxToRem(12.8px), 0.6rem);
-        border-radius: 9999px;
-        background-color: $md-pink-300;
+      100% {
+        transform: translate(-50%, -75%) rotate(360deg);
       }
     }
 
-    & + & {
-      margin-left: 0.9rem;
+    @keyframes up {
+      0% {
+        top: 70%;
+      }
+
+      100% {
+        top: -30%;
+      }
+    }
+  }
+
+  &__percentage {
+    position: absolute;
+    top: 30%;
+    right: -10%;
+
+    &::before {
+      content: "0%";
+      animation-name: percentage;
+      animation-duration: 5.5s;
+      animation-delay: 1s;
+      color: $base-color;
+      font-size: 2rem;
+      font-weight: 700;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes percentage {
+      @for $i from 0 through 70 {
+        $percentage: $i + "%";
+
+        #{$percentage} {
+          content: $percentage;
+        }
+      }
+
+      100% {
+        content: "70%";
+      }
     }
   }
 }
