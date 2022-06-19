@@ -38,6 +38,7 @@
 | ![Jun-15-2022 07-48-24](https://user-images.githubusercontent.com/69744608/173701994-e8a5e9c6-b23a-4b00-b428-6964d5576afa.gif) | 球が脈打つ | 球が脈打つローディングアニメーション
 | ![Jun-16-2022 22-35-44](https://user-images.githubusercontent.com/69744608/174082144-46f9133f-fc02-48fd-9417-6200d9186ca5.gif) | 拡大縮小繰り返す | 3つの球が拡大縮小を繰り返すローディングアニメーション
 | ![Jun-17-2022 10-31-52](https://user-images.githubusercontent.com/69744608/174204589-432baa5c-f629-4032-a51e-4c63985992b2.gif) | ローディングバー | CSSだけでローディングバーを作成 
+| ![Jun-19-2022 09-13-42](https://user-images.githubusercontent.com/69744608/174460846-4a18782f-ad8e-47e8-a956-4a6ac014149d.gif) | 4分割 | 4分割した白い背景が右からスライドするアニメーション
 
 ## インフォグラフィック
 | 実際の動き | タイトル | 説明 |
