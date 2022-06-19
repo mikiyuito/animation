@@ -124,7 +124,7 @@
       justify-content: center;
       width: 100%;
       height: 100%;
-      animation-name: percentage;
+      animation-name: loadingPercentage;
       animation-duration: 10s;
       animation-timing-function: linear;
       color: $base-color;
@@ -133,7 +133,7 @@
       animation-fill-mode: forwards;
       mix-blend-mode: difference;
 
-      @keyframes percentage {
+      @keyframes loadingPercentage {
         @for $i from 0 through 100 {
           $percentage: $i + "%";
 
@@ -169,6 +169,125 @@
         100% {
           transform: scaleX(1);
         }
+      }
+    }
+  }
+
+  // Split:4
+  //--------------------------------------------
+  &[data-animation="split:4"] {
+    & #{$this}__inner {
+      position: relative;
+    }
+
+    & #{$this}__hero {
+      display: grid;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    & #{$this}__figure,
+    & #{$this}__body {
+      grid-area: 1 / -1;
+    }
+
+    & #{$this}__body {
+      margin: auto 0;
+    }
+
+    & #{$this}__text {
+      display: inline-block;
+      position: relative;
+      animation-name: splitFadeIn;
+      animation-duration: 1s;
+      animation-delay: 0.8s;
+      opacity: 0;
+      color: #fff;
+      font-size: pxToRem(24px);
+      font-weight: 700;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+      animation-fill-mode: forwards;
+
+      @keyframes splitFadeIn {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation-name: loadingRevealCover;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 1s;
+        background-color: #fff;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes loadingRevealCover {
+        0% {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+
+        100% {
+          transform: scaleX(0);
+          transform-origin: left;
+        }
+      }
+    }
+
+    & #{$this}__split {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    & #{$this}__line {
+      z-index: 9999;
+      width: 100%;
+      height: math.div(100%, 4);
+      margin: 0 auto;
+      animation-name: splitSlide;
+      animation-duration: 0.8s;
+
+      animation-timing-function: ease-out;
+      background-color: #fff;
+      animation-fill-mode: forwards;
+      will-change: contents;
+
+      &.-line1 {
+        animation-delay: 0.3s;
+      }
+
+      &.-line2 {
+        animation-delay: 0.2s;
+      }
+
+      &.-line3 {
+        animation-delay: 0.1s;
+      }
+    }
+
+    @keyframes splitSlide {
+      0% {
+        z-index: 9999;
+        transform: translate3d(0, 0, 0);
+      }
+
+      100% {
+        z-index: -9999;
+        transform: translate3d(-110%, 0, 0);
       }
     }
   }
