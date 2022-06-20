@@ -610,21 +610,110 @@
       mix-blend-mode: difference;
       color: $base-color;
     }
+
+    @include hover() {
+      & #{$this}__circle {
+        width: 100%;
+      }
+
+      & #{$this}__arrow {
+        transform: translateX(0.5em);
+        transition-duration: 0.5s;
+        transition-delay: 0s, 0s, 0.1s;
+        background-color: $base-color;
+
+        &::before {
+          transform: translateX(0.8em) rotate(45deg);
+        }
+      }
+    }
   }
 
-  @include hover() {
+  // Slide Arrow
+  //--------------------------------------------
+  &[data-animation="slide:arrow"] {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1.5rem;
+    padding-left: 0;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+
+    & #{$this}__text {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
     & #{$this}__circle {
-      width: 100%;
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 1.5rem;
+      bottom: 0;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      margin: auto 0;
+      overflow: hidden;
+      transition-property: background-color, border-color;
+      transition-duration: 0.3s;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      background-color: $main-color;
     }
 
     & #{$this}__arrow {
-      transform: translateX(0.5em);
-      transition-duration: 0.5s;
-      transition-delay: 0s, 0s, 0.1s;
-      background-color: $base-color;
+      display: inline-block;
+      transition-property: color;
+      transition-duration: 0.3s;
+      color: #fff;
+    }
 
-      &::before {
-        transform: translateX(0.8em) rotate(45deg);
+    @keyframes slideArrow {
+      // 0% {
+      //   初期位置
+      //   transform: translateX(0);
+      //   opacity: 1;
+      // }
+
+      50% {
+        //透明になりながら、右に移動
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      55% {
+        //透明のまま左に移動
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      // 100% {
+      //不透明になりながら、左に移動(初期位置に戻る)
+      //   transform: translateX(0);
+      //   opacity: 1;
+      // }
+    }
+
+    @include hover() {
+      background-color: #000;
+
+      & #{$this}__text {
+        color: #fff;
+      }
+
+      & #{$this}__circle {
+        border-color: #000;
+        background-color: #fff;
+      }
+
+      & #{$this}__arrow {
+        animation-name: slideArrow;
+        animation-duration: 0.3s;
+        color: #000;
       }
     }
   }
