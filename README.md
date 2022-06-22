@@ -41,6 +41,7 @@
 | ![Jun-16-2022 22-35-44](https://user-images.githubusercontent.com/69744608/174082144-46f9133f-fc02-48fd-9417-6200d9186ca5.gif) | 拡大縮小繰り返す | 3つの球が拡大縮小を繰り返すローディングアニメーション
 | ![Jun-17-2022 10-31-52](https://user-images.githubusercontent.com/69744608/174204589-432baa5c-f629-4032-a51e-4c63985992b2.gif) | ローディングバー | CSSだけでローディングバーを作成 
 | ![Jun-19-2022 09-13-42](https://user-images.githubusercontent.com/69744608/174460846-4a18782f-ad8e-47e8-a956-4a6ac014149d.gif) | 4分割 | 4分割した白い背景が右からスライドするアニメーション
+| ![Jun-22-2022 12-24-24](https://user-images.githubusercontent.com/69744608/174937279-9c3c4f88-4d91-47d0-842e-7d543d09c8ce.gif) | ドットローダー | 一つのdiv要素のみで作成された。擬似要素すら使用されていない。background-imageとmask-imageの組み合わせ
 
 ## インフォグラフィック
 | 実際の動き | タイトル | 説明 |
