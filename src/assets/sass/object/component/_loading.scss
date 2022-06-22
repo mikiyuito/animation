@@ -291,4 +291,77 @@
       }
     }
   }
+
+  // Single
+  //--------------------------------------------
+
+  &[data-animation="single"] {
+    width: 10rem;
+    height: 8rem;
+    animation-name: dotBack, dotMove;
+    animation-duration: 4s, 2s;
+    animation-timing-function: steps(1);
+    animation-iteration-count: infinite;
+    background-image: conic-gradient($spotify-color 0% 50%, $twitter-color 50% 100%),
+      conic-gradient($md-deep-purple-400 0% 50%, $md-amber-a700 50% 100%);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 200% 50%;
+    background-position-x: 0%, 0%;
+    background-position-y: 0%, 100%;
+
+    -webkit-mask-image: radial-gradient(#000 69%, transparent 70.71%), radial-gradient(#000 69%, transparent 70.71%),
+      radial-gradient(#000 69%, transparent 70.71%);
+    -webkit-mask-repeat: no-repeat, no-repeat, no-repeat;
+    -webkit-mask-size: 25% 31.25%;
+    -webkit-mask-position-x: 0%, 50%, 100%;
+    -webkit-mask-position-y: 0%, 0%, 0%;
+
+    @keyframes dotMove {
+      0% {
+        -webkit-mask-position-y: 0%, 0%, 0%;
+      }
+
+      16.67% {
+        -webkit-mask-position-y: 100%, 0%, 0%;
+      }
+
+      33.33% {
+        -webkit-mask-position-y: 100%, 100%, 0%;
+      }
+
+      50% {
+        -webkit-mask-position-y: 100%, 100%, 100%;
+      }
+
+      66.67% {
+        -webkit-mask-position-y: 0%, 100%, 100%;
+      }
+
+      83.33% {
+        -webkit-mask-position-y: 0%, 0%, 100%;
+      }
+
+      100% {
+        -webkit-mask-position-y: 0%, 0%, 0%;
+      }
+    }
+
+    @keyframes dotBack {
+      0% {
+        background-position-x: 0%, 0%;
+      }
+
+      25% {
+        background-position-x: 100%, 0%;
+      }
+
+      50% {
+        background-position-x: 100%, 100%;
+      }
+
+      100% {
+        background-position-x: 0%, 0%;
+      }
+    }
+  }
 }
