@@ -401,4 +401,70 @@
       -webkit-mask-position: bottom;
     }
   }
+
+  // Fusion
+  //--------------------------------------------
+  &[data-animation="fusion"] {
+    --circle: radial-gradient(farthest-side, #{$twitter-color} 95%, transparent);
+    width: 15rem;
+    height: 15rem;
+    animation-name: moveCenter, fusion;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    background-image: var(--circle), var(--circle), var(--circle), var(--circle);
+    background-repeat: no-repeat;
+    background-size: 20% 20%;
+    background-position-x: 50%, 100%, 50%, 0%;
+    background-position-y: 0%, 50%, 100%, 50%;
+
+    @keyframes fusion {
+      0%,
+      25%,
+      90% {
+        background-size: 20% 20%;
+      }
+
+      40%,
+      45% {
+        background-size: 30% 30%, 20% 20%, 20% 20%, 20% 20%;
+      }
+
+      60%,
+      65% {
+        background-size: 40% 40%, 20% 20%, 20% 20%, 20% 20%;
+      }
+
+      80% {
+        background-size: 50% 50%, 20% 20%, 20% 20%, 20% 20%;
+      }
+    }
+
+    @keyframes moveCenter {
+      0%,
+      100% {
+        background-position-x: 50%, 100%, 50%, 0%;
+        background-position-y: 0%, 50%, 100%, 50%;
+      }
+
+      20% {
+        background-position-x: 50%, 100%, 50%, 0%;
+        background-position-y: 50%, 50%, 100%, 50%;
+      }
+
+      40% {
+        background-position-y: 50%, 50%, 100%, 50%;
+        background-position-x: 50%, 50%, 50%, 0%;
+      }
+
+      60% {
+        background-position-y: 50%, 50%, 50%, 50%;
+        background-position-x: 50%, 50%, 50%, 0%;
+      }
+
+      80% {
+        background-position-y: 50%, 50%, 50%, 50%;
+        background-position-x: 50%, 50%, 50%, 50%;
+      }
+    }
+  }
 }
