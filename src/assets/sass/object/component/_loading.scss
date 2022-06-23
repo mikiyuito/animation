@@ -364,4 +364,41 @@
       }
     }
   }
+
+  // Move Midpoint
+  //--------------------------------------------
+  &[data-animation="move:midpoint"] {
+    width: 10rem;
+    height: 10rem;
+    animation-name: moveMidpoint;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-image: conic-gradient(
+      from 45deg,
+      $spotify-color 0 25%,
+      $md-deep-purple-400 25% 50%,
+      $twitter-color 50% 75%,
+      $md-amber-a700 75% 100%
+    );
+    background-repeat: no-repeat;
+
+    -webkit-mask-image: radial-gradient(farthest-side, #000 95%, transparent);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 35% 35%;
+    -webkit-mask-position: left;
+  }
+
+  @keyframes moveMidpoint {
+    25% {
+      -webkit-mask-position: top;
+    }
+
+    50% {
+      -webkit-mask-position: right;
+    }
+
+    75% {
+      -webkit-mask-position: bottom;
+    }
+  }
 }
