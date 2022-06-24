@@ -467,4 +467,58 @@
       }
     }
   }
+
+  // Lattice Scale
+  //--------------------------------------------
+
+  &[data-animation="latticeScale"] {
+    --circle: radial-gradient(farthest-side, #{$twitter-color} 95%, transparent);
+    width: 10rem;
+    height: 10rem;
+    animation-name: latticeScale;
+    animation-duration: 2.5s;
+    animation-timing-function: cubic-bezier(0.46, 0.43, 0.12, 0.58);
+    animation-iteration-count: infinite;
+    background-image: var(--circle), var(--circle), var(--circle), var(--circle), var(--circle), var(--circle),
+      var(--circle), var(--circle), var(--circle);
+    background-repeat: no-repeat;
+    background-position: left top, center top, right top, left center, center center, right center, left bottom,
+      center bottom, right bottom;
+    background-size: 10% 10%;
+
+    @keyframes latticeScale {
+      0%,
+      100% {
+        background-size: 30% 30%, 10% 10%, 10% 10%, 10% 10%, 10% 10%, 30% 30%, 30% 30%, 10% 10%, 10% 10%;
+      }
+
+      12% {
+        background-size: 30% 30%, 10% 10%, 30% 30%, 10% 10%, 10% 10%, 10% 10%, 10% 10%, 30% 30%, 10% 10%;
+      }
+
+      24% {
+        background-size: 30% 30%, 30% 30%, 10% 10%, 10% 10%, 10% 10%, 10% 10%, 10% 10%, 10% 10%, 10% 10%;
+      }
+
+      36% {
+        background-size: 10% 10%, 30% 30%, 10% 10%, 10% 10%, 10% 10%, 10% 10%, 10% 10%, 10% 10%, 30% 30%;
+      }
+
+      48% {
+        background-size: 10% 10%, 10% 10%, 10% 10%, 30% 30%, 10% 10%, 10% 10%, 10% 10%, 30% 30%, 30% 30%;
+      }
+
+      60% {
+        background-size: 10% 10%, 10% 10%, 10% 10%, 30% 30%, 10% 10%, 10% 10%, 30% 30%, 10% 10%, 30% 30%;
+      }
+
+      72% {
+        background-size: 10% 10%, 10% 10%, 10% 10%, 10% 10%, 30% 30%, 10% 10%, 30% 30%, 10% 10%, 10% 10%;
+      }
+
+      84% {
+        background-size: 10% 10%, 30% 30%, 10% 10%, 10% 10%, 10% 10%, 10% 10%, 30% 30%, 10% 10%, 10% 10%;
+      }
+    }
+  }
 }
