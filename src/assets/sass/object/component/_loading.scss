@@ -521,4 +521,51 @@
       }
     }
   }
+
+  // Spinning Bar
+  //--------------------------------------------
+  &[data-animation="spinningBar"] {
+    /*
+        子要素や擬似要素が.c-loaderの領域全体を覆うようにする
+        align-itemsの初期値がnormal(stretchのような振る舞い)であるため
+      */
+    display: grid;
+    /* 常に正方形を保つ */
+    width: 10rem;
+    /* mask: conic-gradient(from 22deg, #0003, #000); */
+
+    /* アニメーションの設定 */
+    animation-name: spinning;
+    animation-duration: 1s;
+    animation-timing-function: steps(8);
+    /* バーが8本あるから */
+    animation-iteration-count: infinite;
+    aspect-ratio: 1;
+
+    /* 不透明度を持つスピニングバーを作成 */
+    -webkit-mask-image: conic-gradient(from 20deg, #0003, #{$twitter-color});
+
+    @keyframes spinning {
+      /* 一周する */
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+
+    &,
+    &::before {
+      /* 8本のスピニングバーを作成 */
+      --bar: linear-gradient(#{$twitter-color} 0 0);
+      background-image: var(--bar), var(--bar);
+      background-repeat: space no-repeat, no-repeat space;
+      background-size: 34% 8%, 8% 34%;
+      background-position-x: 50%;
+      background-position-y: 50%;
+    }
+
+    &::before {
+      content: "";
+      transform: rotate(45deg);
+    }
+  }
 }
