@@ -45,6 +45,8 @@
 | ![Jun-2-2022 10-27-49](https://user-images.githubusercontent.com/69744608/175188635-9563dad2-9dcb-4ffa-803b-d3018b2e22fe.gif) | 四辺の中点に移動 | 正方形の四辺の中点に移動するドットローダアニメーション
 | ![Jun-24-2022 08-08-56](https://user-images.githubusercontent.com/69744608/175429729-cf83ab77-7935-45bd-a1d9-4daa238df1db.gif) | 融合 | 四つの球が融合するローディングアニメーション
 | ![Jun-25-2022 08-26-49](https://user-images.githubusercontent.com/69744608/175747544-1179cbda-a003-41ef-9fef-62844fe7ee34.gif) | 三列三行の拡大縮小 | 三列三行の拡大縮小のローディングアニメーション。単一の要素のみで9個の球を表現←擬似要素すら使用していない
+| ![Jun-26-2022 07-37-00](https://user-images.githubusercontent.com/69744608/175792438-78aa9640-4814-4255-b7d5-681837559fff.gif) | スピニングバー | 一般的なスピニングバー
+
 
 
 ## インフォグラフィック
