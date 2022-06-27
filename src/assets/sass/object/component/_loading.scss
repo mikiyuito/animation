@@ -568,4 +568,53 @@
       transform: rotate(45deg);
     }
   }
+
+  // Spinning Dot
+  //--------------------------------------------
+
+  &[data-animation="spinningDot"] {
+    display: grid;
+    width: 10rem;
+    animation-name: spinningDot;
+    animation-duration: 1s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    aspect-ratio: 1;
+    // 1個のドットが円形の経路を移動しながら、
+    // その後ろに薄くなっていくドットの軌跡を残しているような印象を与える
+    -webkit-mask-image: conic-gradient(from 15deg, rgba(0, 0, 0, 0.3), #000);
+
+    @keyframes spinningDot {
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+
+    &,
+    &::before,
+    &::after {
+      // circle closest-sideはグラデーションの図形がボックスの中心から最も近い辺と接する
+      // ✍️今回の場合、background-sizeの値が「20% 80%」のため,直径32pxの円ができる、
+
+      background-image: radial-gradient(circle closest-side, #ee963e 100%, transparent),
+        radial-gradient(circle closest-side, #ee963e 100%, transparent);
+      background-repeat: repeat-x, repeat-y;
+      background-position: -150% 50%, 50% -150%;
+      background-size: 80% 20%, 20% 80%;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      grid-area: 1 /1;
+    }
+
+    &::before {
+      transform: rotate(30deg);
+    }
+
+    &::after {
+      transform: rotate(60deg);
+    }
+  }
 }
