@@ -617,4 +617,32 @@
       transform: rotate(60deg);
     }
   }
+
+  // Mask Slide
+  //--------------------------------------------
+
+  &[data-animation="maskSlide"] {
+    width: 100%;
+    animation-name: maskSlide;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    background-image: url(../img/common/24022618_s.jpg);
+    background-repeat: no-repeat;
+    aspect-ratio: 1;
+    -webkit-mask-image: linear-gradient(to right, #000 var(--mask-start, 0%), #0000 var(--mask-end, 0%));
+
+    @keyframes maskSlide {
+      @for $i from 1 through 100 {
+        $percentage: $i + "%";
+        $end: ($i * 1.1) + "%";
+
+        #{ $percentage} {
+          opacity: $i * 0.01;
+          --mask-start: #{$percentage};
+          --mask-end: #{$end};
+        }
+      }
+    }
+  }
 }
