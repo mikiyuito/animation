@@ -140,40 +140,6 @@ html {
   //ページ内リンクで移動するときの動きがスムーズ
   scroll-behavior: smooth;
   font-style: normal;
-
-  // &.is-useJs {
-  //   //JS使用環境
-  //   //画面ロードした瞬間、スクロールさせない
-  //   overflow-y: hidden;
-  //   //画面ロードした瞬間、パンやズーム操作を無効化
-  //   //※a要素やbutton要素は機能するし、タッチイベントは発生する
-  //   touch-action: none;
-
-  //   @include mq(lg) {
-  //     //992px以上の時、スクロール許可
-  //     overflow-y: visible;
-  //   }
-  // }
-
-  // &.is-loaded {
-  //   //画面ロードアニメーションが終わったら、垂直方向のスクロール許可
-  //   overflow-y: visible;
-  //   //画面ロードアニメーションが終わったら、パンやズーム操作許可
-  //   touch-action: auto;
-  // }
-
-  // &.is-drawerActive {
-  //   //ドロワーメニューが開いているときはスクロールさせない
-  //   overflow-y: hidden;
-  //   //ドロワーメニューが開いている時は、パンやズーム操作を無効化
-  //   //※a要素やbutton要素は機能するし、タッチイベントは発生する
-  //   touch-action: none;
-
-  //   @include mq(lg) {
-  //     //992px以上の時、スクロール許可
-  //     overflow-y: visible;
-  //   }
-  // }
 }
 
 body {
@@ -202,16 +168,6 @@ body {
   //・https://ics.media/entry/14087/#otf
   // font-feature-settings: "palt";
   font-feature-settings: "pkna";
-
-  @include ie() {
-    &::before {
-      content: "このブラウザーは古いため、一部表示に乱れが生じる可能性がありますので、ご了承ください。できるだけ最新版のWindowsでご利用いただくか、別のブラウザーをお使いください！";
-      display: block;
-      padding: 2rem;
-      background-color: yellow;
-      color: black;
-    }
-  }
 
   // .is-drawerActive & {
   //   //is-drawerActiveのついたbody要素
@@ -542,15 +498,4 @@ template,
     background-attachment: initial !important;
     scroll-behavior: auto !important;
   }
-}
-
-/**
- * Checker
- */
-button:not([type]):after {
-  //button要素にtype属性がついていない時エラーを出す（開発時のみ必要）
-  //button要素のデフォルトtype属性はsubmitでただのボタンとして使いたい時は、type='button'を指定
-  content: "警告： このbuttonにはtype属性がありません";
-  background-color: red;
-  color: #fff;
 }
