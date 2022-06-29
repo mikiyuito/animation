@@ -48,6 +48,8 @@
 | ![Jun-26-2022 07-37-00](https://user-images.githubusercontent.com/69744608/175792438-78aa9640-4814-4255-b7d5-681837559fff.gif) | スピニングバー | 一般的なスピニングバー
 | ![Jun-27-2022 20-45-52](https://user-images.githubusercontent.com/69744608/175936772-bfa6663d-d2df-44bc-a81d-fd58f7171a19.gif) | スピニングドット | 一般的なスピニングドット
 | ![Jun-28-2022 09-19-55](https://user-images.githubusercontent.com/69744608/176062231-c0f66e7c-5582-4403-8419-2f3b71ba5873.gif) | 左から右に | 画像を左から右に表示させる。アニメーションの動きを制御するにはJS必要やと思う。
+| ![Jun-29-2022 12-20-01](https://user-images.githubusercontent.com/69744608/176344047-7a54cb34-55cd-42e0-9348-38a9eb133945.gif) | スケルトンスクリーン | 画面に表示するデータが読み込まれるまでの間、そのコンテンツの枠組みだけを事前に表示させるUIのこと
+
 
 
 ## インフォグラフィック
