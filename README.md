@@ -33,6 +33,7 @@
 | ![Jun-12-2022 09-40-00](https://user-images.githubusercontent.com/69744608/173209524-6035470f-f601-4c46-bed0-a7f02bef46e6.gif) | 背景が左から伸びて出現 | 背景が左から伸びてテキストが出現するアニメーション
 | ![Jun-13-2022 09-24-13](https://user-images.githubusercontent.com/69744608/173259887-54e5d822-c72a-436c-b75a-fcd4e498d22a.gif) | ぼわぁ〜ん | ぼわぁ〜んって感じで出現するアニメーション
 | ![Jun-14-2022 10-21-38](https://user-images.githubusercontent.com/69744608/173473534-814876de-4ede-41f6-8e7a-f96b4edf5eb1.gif) | スライドループ | テキストが左からスライドしてループするアニメーション
+| ![Jul-01-2022 07-14-54](https://user-images.githubusercontent.com/69744608/176792413-b4e1cb5b-b2b3-461f-a77b-7e2b141e9e0a.gif) | 一定間隔で切り替え | テキストが一定間隔で切り替わる
 
 ## ローディング
 | 実際の動き | タイトル | 説明 |
