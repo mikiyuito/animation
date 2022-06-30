@@ -409,4 +409,67 @@
       }
     }
   }
+
+  // Interval Text
+  //--------------------------------------------
+  &[data-animation="intervalText"] {
+    width: 100%;
+
+    & #{$this}__inner {
+      width: 95%;
+    }
+
+    & #{$this}__title {
+      position: relative;
+      width: 100%;
+    }
+
+    & #{$this}__text {
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 2;
+    }
+
+    & #{$this}__text.-behind {
+      position: absolute;
+      top: 0;
+    }
+
+    & #{$this}__string {
+      display: block;
+      width: 100%;
+      transform: translateY(-50px);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      opacity: 0;
+      /* clip-path確認用 */
+      /* background-color: #000; */
+    }
+
+    & .is-active #{$this}__string {
+      animation-name: intervalSwitch;
+      animation-duration: 3s;
+      animation-timing-function: ease;
+      animation-delay: 0.2s;
+      animation-iteration-count: var(--animationCount);
+    }
+
+    @keyframes intervalSwitch {
+      20% {
+        transform: translateY(0);
+        opacity: 1;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      }
+
+      80% {
+        transform: translateY(0);
+        opacity: 1;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      }
+
+      100% {
+        transform: translateY(50px);
+      }
+    }
+  }
 }
