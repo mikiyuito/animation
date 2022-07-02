@@ -8,4 +8,103 @@
   background-color: transparent;
   appearance: none;
   cursor: pointer;
+
+  // scaleBorder
+  //--------------------------------------------
+  &[data-animation="scaleBorder"] {
+    --border: linear-gradient(#000 0 100%);
+    position: relative;
+    width: 100px;
+    background-color: #fff;
+    background-image: var(--border), var(--border), var(--border), var(--border);
+    background-repeat: no-repeat;
+    background-position: left top, right top, right bottom, left bottom;
+    background-size: 100% 5px, 5px 100%;
+    aspect-ratio: 1;
+
+    &[aria-expanded="false"] {
+      animation-name: scaleClose;
+      animation-duration: 1.5s;
+      /* ロード時にアニメーションさせない */
+      animation-play-state: paused;
+      animation-timing-function: cubic-bezier(0, 0.34, 1, 0.29);
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes scaleClose {
+      20%,
+      50% {
+        background-size: 0% 5px, 5px 0%;
+      }
+
+      80% {
+        background-size: 100% 5px, 5px 100%;
+      }
+    }
+
+    & #{$this}__line {
+      display: block;
+      position: absolute;
+      width: 50%;
+      height: 5px;
+      margin: auto;
+      transition-property: background-color;
+      transition-duration: 0.5s;
+      transition-delay: 1.2s;
+      background-color: #000;
+      inset: 0;
+    }
+
+    & #{$this}__line::before,
+    & #{$this}__line::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition-property: transform;
+      transition-duration: 0.3s;
+      transition-delay: 0.5s;
+      background-color: #000;
+    }
+
+    & #{$this}__line::before {
+      transform: translateY(-15px);
+    }
+
+    & #{$this}__line::after {
+      transform: translateY(15px);
+    }
+
+    &[aria-expanded="true"] {
+      animation-name: scaleOpen;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: cubic-bezier(0, 0.34, 1, 0.29);
+    }
+
+    @keyframes scaleOpen {
+      20%,
+      50% {
+        background-size: 0% 5px, 5px 0%;
+      }
+
+      80% {
+        background-size: 100% 5px, 5px 100%;
+      }
+    }
+
+    &[aria-expanded="true"] #{$this}__line {
+      transition-delay: 0.3s;
+      background-color: transparent;
+    }
+
+    &[aria-expanded="true"] #{$this}__line::before {
+      transform: rotate(45deg);
+    }
+
+    &[aria-expanded="true"] #{$this}__line::after {
+      transform: rotate(-45deg);
+    }
+  }
 }
