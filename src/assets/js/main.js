@@ -4,6 +4,10 @@
 
 const $html = document.documentElement;
 
+// =====================================================
+// テキスト切り替え
+// =====================================================
+
 let $intervalTitle = document.querySelector(".js-intervalTitle");
 let $intervalText = $intervalTitle.children;
 let intervalTextCount = $intervalText.length;
@@ -29,3 +33,21 @@ if (intervalTextCount !== 1) {
 } else {
   $html.style.setProperty("--animationCount", "infinite");
 }
+
+// =====================================================
+// ハンバーガーメニュー
+// =====================================================
+
+let $hamburgerButton = document.getElementById("js-hamburger");
+let $hamburgerText = document.getElementById("js-hamburgerText");
+$hamburgerButton.addEventListener("click", () => {
+  let isExpanded = $hamburgerButton.getAttribute("aria-expanded") === "false";
+  $hamburgerButton.setAttribute("aria-expanded", isExpanded);
+
+  if (isExpanded) {
+    $hamburgerText.textContent = "メニューを閉じる";
+    $hamburgerButton.style.setProperty("animation-play-state", "running");
+  } else {
+    $hamburgerText.textContent = "メニューを開く";
+  }
+});
