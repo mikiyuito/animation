@@ -107,4 +107,105 @@
       transform: rotate(-45deg);
     }
   }
+
+  // snakeCircle
+  //--------------------------------------------
+  &[data-animation="snakeCircle"] {
+    position: relative;
+    width: 100px;
+    transition-property: transform, background-size;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-in-out, cubic-bezier(0.46, 0.26, 0, 1.04);
+    transition-delay: 0s, 0.5s;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: radial-gradient(#000 0 100%, transparent);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    aspect-ratio: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      /* 枠線の幅 */
+      width: 90%;
+      margin: auto;
+      border-radius: 9999px;
+      background-color: #fff;
+      pointer-events: none;
+      inset: 0;
+      aspect-ratio: 1;
+    }
+
+    & #{$this}__midLine::before {
+      --border: linear-gradient(#000 0 100%);
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      transition-property: opacity, background-position, background-size;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+      transition-delay: 0s, 0.5s, 0.5s;
+      background-image: var(--border), var(--border);
+      background-repeat: no-repeat;
+      background-position: 33.5% center, 66.5% center;
+      background-size: 25% 5px;
+      inset: 0;
+    }
+
+    & #{$this}__line {
+      display: block;
+      position: absolute;
+      width: 50%;
+      height: 5px;
+      margin: auto;
+      inset: 0;
+    }
+
+    & #{$this}__line::before,
+    & #{$this}__line::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition-property: transform;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+      background-color: #000;
+    }
+
+    & #{$this}__line::before {
+      transform: translateY(-15px);
+    }
+
+    & #{$this}__line::after {
+      transform: translateY(15px);
+    }
+
+    &[aria-expanded="true"] {
+      transform: rotate(360deg);
+      background-size: 100% 100%;
+    }
+
+    &[aria-expanded="true"] #{$this}__midLine::before {
+      transition-delay: 1s, 0s, 0.5s;
+      opacity: 0;
+      background-position: 0% 50%, 100% 50%;
+      background-size: 0% 5px;
+    }
+
+    &[aria-expanded="true"] #{$this}__line::before {
+      transform: rotate(45deg);
+      transition-delay: 0.75s;
+    }
+
+    &[aria-expanded="true"] #{$this}__line::after {
+      transform: rotate(-45deg);
+      transition-delay: 0.75s;
+    }
+  }
 }

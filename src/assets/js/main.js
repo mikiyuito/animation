@@ -38,16 +38,21 @@ if (intervalTextCount !== 1) {
 // ハンバーガーメニュー
 // =====================================================
 
-let $hamburgerButton = document.getElementById("js-hamburger");
-let $hamburgerText = document.getElementById("js-hamburgerText");
-$hamburgerButton.addEventListener("click", () => {
-  let isExpanded = $hamburgerButton.getAttribute("aria-expanded") === "false";
-  $hamburgerButton.setAttribute("aria-expanded", isExpanded);
+let $hamburgerButton = document.querySelectorAll(".js-hamburger");
+let $hamburgerText = document.querySelectorAll(".js-hamburgerText");
+console.log($hamburgerButton);
 
-  if (isExpanded) {
-    $hamburgerText.textContent = "メニューを閉じる";
-    $hamburgerButton.style.setProperty("animation-play-state", "running");
-  } else {
-    $hamburgerText.textContent = "メニューを開く";
-  }
+$hamburgerButton.forEach((elem) => {
+  elem.addEventListener("click", () => {
+    let isExpanded = elem.getAttribute("aria-expanded") === "false";
+    elem.setAttribute("aria-expanded", isExpanded);
+    $hamburgerText.forEach((text) => {
+      if (isExpanded) {
+        text.textContent = "メニューを閉じる";
+        elem.style.setProperty("animation-play-state", "running");
+      } else {
+        text.textContent = "メニューを開く";
+      }
+    });
+  });
 });
