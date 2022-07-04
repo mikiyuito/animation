@@ -50,6 +50,7 @@ $hamburgerButton.forEach((elem) => {
       if (isExpanded) {
         text.textContent = "メニューを閉じる";
         elem.style.setProperty("animation-play-state", "running");
+        elem.classList.add("is-play");
       } else {
         text.textContent = "メニューを開く";
       }
