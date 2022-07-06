@@ -622,26 +622,53 @@
   //--------------------------------------------
 
   &[data-animation="maskSlide"] {
+    position: relative;
     width: 100%;
     animation-name: maskSlide;
     animation-duration: 2s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.69, 0.05, 0.82, 0.5);
+    animation-iteration-count: 1;
     background-image: url(../img/common/24022618_s.jpg);
     background-repeat: no-repeat;
     aspect-ratio: 1;
-    -webkit-mask-image: linear-gradient(to right, #000 var(--mask-start, 0%), #0000 var(--mask-end, 0%));
+    animation-fill-mode: forwards;
+    -webkit-mask-image: linear-gradient(to right, #000 100%, #0000 110%);
+
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 0% 100%;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      animation-name: a;
+      animation-duration: 2.1s;
+      animation-timing-function: cubic-bezier(0.69, 0.05, 0.82, 0.5);
+      animation-iteration-count: 1;
+      background-image: linear-gradient(to right, #0000 60%, #fff 110%);
+      background-repeat: no-repeat;
+      background-position: 200% 0;
+      background-size: 200% 100%;
+      animation-fill-mode: forwards;
+      inset: 0;
+    }
+
+    @keyframes a {
+      100% {
+        background-position: 0% 0;
+      }
+    }
 
     @keyframes maskSlide {
-      @for $i from 1 through 100 {
-        $percentage: $i + "%";
-        $end: ($i * 1.1) + "%";
+      0% {
+        opacity: 0;
+      }
 
-        #{ $percentage} {
-          opacity: $i * 0.01;
-          --mask-start: #{$percentage};
-          --mask-end: #{$end};
-        }
+      100% {
+        opacity: 1;
+        // -webkit-mask-image: linear-gradient(to right, #000 100%, #0000 110%);
+        // -webkit-mask-image: linear-gradient(to right, #000 70%, #0000 110%);
+        -webkit-mask-size: 100% 100%;
       }
     }
   }
